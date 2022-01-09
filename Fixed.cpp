@@ -68,6 +68,8 @@ std::ostream &operator<<(std::ostream &out, Fixed const &obj)
 
 Fixed&	Fixed::operator=(Fixed const &obj)
 {
+	if (this == obj)
+		return (*this);
 	this->value = obj.value;
 	return (*this);
 }
