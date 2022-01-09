@@ -1,11 +1,16 @@
-#pragma once
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <cmath>
+
+# ifndef	N_OF_FB
+#  define	N_OF_FB 8
+# endif
 
 class Fixed {
 	int					value;
-	static const int	number_of_fractional_bits = 8;
+	static const int	number_of_fractional_bits = N_OF_FB;
 
 public:
 	Fixed(void);
@@ -48,3 +53,5 @@ public:
 std::ostream&	operator<<(std::ostream &out, Fixed const &obj);
 const Fixed&	min(Fixed const &a, Fixed const &b);
 const Fixed&	max(Fixed const &a, Fixed const &b);
+
+#endif // FIXED_HPP
